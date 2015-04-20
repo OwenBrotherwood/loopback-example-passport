@@ -27,7 +27,7 @@
       "bindCredentials": "bindPassword",
       "searchBase": "ou=people,dc=example,dc=org",
       "searchAttributes": ["cn", "mail", "uid", "givenname"],
-      "searchFilter": "(uid={{username}})"
+      "searchFilter": "(&(objectcategory=person)(objectclass=user)(|(samaccountname={{username}})(mail={{username}})))"
     }
   },
   "facebook-login": {
