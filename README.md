@@ -22,7 +22,6 @@ Status:
 - ms-ad authentication works for Owen
 - openldap works for Pierre
 - The whole subject of authorization is yet to be checked.
-- I note that on rendering of auth/account, the banner partial has an undefined for user.username
 - Linked accounts...Needed? The LDAP is for internal access such that one can control access without depending on local accounts
 
 Notes:

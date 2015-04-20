@@ -18,8 +18,8 @@
     "failureRedirect": "/msad",
     "failureFlash": true,
     "session": true,
-    "LdapAttributeForLogin": "uid",
-    "LdapAttributeForUsername": "uid",
+    "LdapAttributeForLogin": "mail",
+    "LdapAttributeForUsername": "mail",
     "LdapAttributeForMail": "mail",
     "server":{
       "url": "ldap://ldap.example.org:389/dc=example,dc=org",
