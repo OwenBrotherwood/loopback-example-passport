@@ -3,12 +3,12 @@ extends ../layouts/layout
 block content
   .row
     .col-md-6.col-md-offset-3
-      form(role='form', action='/auth/local', method='post')
+      form(role='form', action='/auth/openldap', method='post')
         .form-group
-          label(for='username') Local Your username
+          label(for='username') OpenLDAP Your username
           input#username.form-control(type='text', name='username', placeholder='Enter username')
         .form-group
-          label(for='password') Local Password
+          label(for='password')OpenLDAP Password
           input#password.form-control(type='password', name='password', placeholder='Password')
         button.btn.btn-default(type='submit') Submit
       br

@@ -163,8 +163,8 @@ app.get('/link', function (req, res, next){
   });
 });
 
-app.get('/ldap', function (req, res, next){
-  res.render('pages/ldap', {
+app.get('/openldap', function (req, res, next){
+  res.render('pages/openldap', {
     user: req.user,
     url: req.url
    });
