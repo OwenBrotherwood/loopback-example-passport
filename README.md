@@ -6,6 +6,7 @@ The purpose of this fork is to test implementation of a passport that supports L
 Currently the passport strategi used is https://github.com/vesse/passport-ldapauth
 
 All credit for getting the basics done too https://github.com/PierreGambarotto
+- https://github.com/strongloop/loopback-component-passport/pull/44
 
 Current work is that there is identified at least two use case for LDAP
 
