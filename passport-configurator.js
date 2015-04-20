@@ -137,7 +137,7 @@ PassportConfigurator.prototype.configureProvider = function (name, options) {
 
   var authScheme = options.authScheme;
   if (!authScheme) {
-    // Guess the authentication scheme
+    // Guess the authentication scheme 
     if (options.consumerKey) {
       authScheme = 'oAuth1';
     } else if (options.realm) {
@@ -251,6 +251,36 @@ PassportConfigurator.prototype.configureProvider = function (name, options) {
         }
       ));
       break;
+    case 'ldap':
+      passport.use(name, new AuthStrategy(_.defaults({
+          usernameField: options.usernameField || 'username',
+          passwordField: options.passwordField || 'password',
+          session: options.session, authInfo: true,
+          passReqToCallback: true
+        }, options),
+        function (req, user, done) {
+	  if (user) {
+            var LdapAttributeForUsername = options.LdapAttributeForUsername || 'cn'
+            var LdapAttributeForMail = options.LdapAttributeForMail || 'mail'
+            var externalId = user[options.LdapAttributeForLogin || 'uid'];
+            var email = [].concat(user[LdapAttributeForMail])[0]
+            var profile = { 
+              username: [].concat(user[LdapAttributeForUsername])[0],
+              id: externalId
+            }
+            if (!!email) {
+	      profile.emails = [{value: email}] 
+            }
+            var OptionsForCreation = _.defaults({
+              autoLogin: true
+	    },options)
+	    self.userIdentityModel.login(name, authScheme, profile, {}, 
+                                         OptionsForCreation, loginCallback(req,done))
+          }
+	  else { done(null)}
+	}
+      ));
+      break;
     case 'oauth':
     case 'oauth1':
     case 'oauth 1.0':
@@ -358,6 +388,9 @@ PassportConfigurator.prototype.configureProvider = function (name, options) {
       failureFlash: options.failureFlash,
       scope: scope, session: session
     }, options.authOptions)));
+  } else if (authType === 'ldap') {
+    var ldapCallback = options.customCallback || defaultCallback;
+    self.app.post(authPath, ldapCallback)
   } else if (link) {
     self.app.get(authPath, passport.authorize(name, _.defaults({scope: scope, session: session}, options.authOptions)));
   } else {
