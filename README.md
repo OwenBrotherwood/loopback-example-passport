@@ -2,6 +2,10 @@
 
 
 WITH LDAP :)
+- or at least one can be authenticated
+The whole subject of authorization is yet to be checked.
+
+Linked accounts...Needed? The LDAP is for internal access such that one can control access without depending on local accounts
 
 Notes:
 Anonymous Bind and not allowed: some Microsoft AD Installations do not allow anonymous bind
