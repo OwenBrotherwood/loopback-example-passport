@@ -9,6 +9,24 @@
     "failureRedirect": "/local",
     "failureFlash": true
   },
+  "myldap": {
+      "provider": "ldap",
+      "authScheme":"ldap",
+      "module": "passport-ldapauth",
+      "authPath": "/auth/ldap",
+    "successRedirect": "/auth/account",
+    "failureRedirect": "/ldap",
+    "session": true,
+    "ldap_attribute_for_login": "uid",
+    "ldap_attribute_for_username": "uid",
+    "ldap_attribute_for_mail": "mail",
+      "server":{
+        "url": "ldap://ldap.example.org:389/dc=example,dc=org",
+        "searchBase": "ou=people,dc=example,dc=org",
+      "searchAttributes": ["cn", "mail", "uid", "givenname"],
+        "searchFilter": "(uid={{username}})"
+      }
+  },
   "facebook-login": {
     "provider": "facebook",
     "module": "passport-facebook",
