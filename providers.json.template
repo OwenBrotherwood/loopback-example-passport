@@ -23,6 +23,8 @@
     "LdapAttributeForMail": "mail",
     "server":{
       "url": "ldap://ldap.example.org:389/dc=example,dc=org",
+      "bindDn": "bindUsername",
+      "bindCredentials": "bindPassword",
       "searchBase": "ou=people,dc=example,dc=org",
       "searchAttributes": ["cn", "mail", "uid", "givenname"],
       "searchFilter": "(uid={{username}})"
