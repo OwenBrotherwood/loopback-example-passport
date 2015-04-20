@@ -170,6 +170,13 @@ app.get('/ldap', function (req, res, next){
    });
 });
 
+app.get('/msad', function (req, res, next){
+  res.render('pages/msad', {
+    user: req.user,
+    url: req.url
+   });
+});
+
 app.get('/auth/logout', function (req, res, next) {
   req.logout();
   res.redirect('/');

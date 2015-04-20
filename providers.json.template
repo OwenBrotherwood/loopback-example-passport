@@ -9,13 +9,13 @@
     "failureRedirect": "/local",
     "failureFlash": true
   },
-  "ldap": {
-    "provider": "ldap",
+  "ms-ad": {
+    "provider": "ms-ad",
     "authScheme":"ldap",
     "module": "passport-ldapauth",
-    "authPath": "/auth/ldap",
+    "authPath": "/auth/msad",
     "successRedirect": "/auth/account",
-    "failureRedirect": "/ldap",
+    "failureRedirect": "/msad",
     "failureFlash": true,
     "session": true,
     "LdapAttributeForLogin": "uid",

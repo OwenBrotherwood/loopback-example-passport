@@ -160,6 +160,10 @@ PassportConfigurator.prototype.configureProvider = function (name, options) {
   var scope = options.scope;
   var authType = authScheme.toLowerCase();
 
+  var provider = options.provider;
+  var providerType = provider.toLowerCase();
+  
+
   var session = !!options.session;
 
   var loginCallback = options.loginCallback || function (req, done) {
@@ -259,6 +263,7 @@ PassportConfigurator.prototype.configureProvider = function (name, options) {
           passReqToCallback: true
         }, options),
         function (req, user, done) {
+console.log(user);
 	  if (user) {
             var LdapAttributeForUsername = options.LdapAttributeForUsername || 'cn'
             var LdapAttributeForMail = options.LdapAttributeForMail || 'mail'
@@ -274,6 +279,7 @@ PassportConfigurator.prototype.configureProvider = function (name, options) {
             var OptionsForCreation = _.defaults({
               autoLogin: true
 	    },options)
+console.log(profile);
 	    self.userIdentityModel.login(name, authScheme, profile, {}, 
                                          OptionsForCreation, loginCallback(req,done))
           }
