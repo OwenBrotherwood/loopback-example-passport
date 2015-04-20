@@ -1,5 +1,16 @@
 # loopback-example-passport
 
+
+WITH LDAP :)
+
+Notes:
+Anonymous Bind and not allowed: some Microsoft AD Installations do not allow anonymous bind
+Bind: if the Bind credentials are wrong, no log so watch out
+SearchFilter: is important.
+
+br Owen Brotherwood
+
+
 LoopBack example for [loopback-passport](https://github.com/strongloop/loopback-passport) module. It demonstrates how to use
 LoopBack's user/userIdentity/userCredential models and [passport](http://passportjs.org) to interact with other auth providers.
 
