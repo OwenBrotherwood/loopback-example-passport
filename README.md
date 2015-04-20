@@ -2,10 +2,10 @@
 
 
 WITH LDAP :)
-- or at least one can be authenticated
-The whole subject of authorization is yet to be checked.
-
-Linked accounts...Needed? The LDAP is for internal access such that one can control access without depending on local accounts
+- Or at least one can be authenticated
+- The whole subject of authorization is yet to be checked.
+- I note that on rendering of auth/account, the banner partial has an undefined for user.username
+- Linked accounts...Needed? The LDAP is for internal access such that one can control access without depending on local accounts
 
 Notes:
 passport-configurator.js: the version in the root of this repo is changed from the presently available version
