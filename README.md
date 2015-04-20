@@ -13,6 +13,8 @@ Bind: if the Bind credentials are wrong, no log so watch out
 SearchFilter: is important.
 
 br Owen Brotherwood
+ 
+All credit for getting the basics done too https://github.com/PierreGambarotto
 
 
 LoopBack example for [loopback-passport](https://github.com/strongloop/loopback-passport) module. It demonstrates how to use
