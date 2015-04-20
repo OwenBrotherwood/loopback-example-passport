@@ -379,7 +379,7 @@ PassportConfigurator.prototype.configureProvider = function (name, options) {
    * Facebook will redirect the user back to the application at
    * /auth/facebook/callback with the authorization code
    */
-  if (authType === 'local') {
+  if (authType === 'local' || 'ldap') {
     self.app.post(authPath, passport.authenticate(name, options.fn || _.defaults({
       successReturnToOrRedirect: options.successReturnToOrRedirect,
       successRedirect: options.successRedirect,
@@ -388,9 +388,11 @@ PassportConfigurator.prototype.configureProvider = function (name, options) {
       failureFlash: options.failureFlash,
       scope: scope, session: session
     }, options.authOptions)));
+/*
   } else if (authType === 'ldap') {
     var ldapCallback = options.customCallback || defaultCallback;
     self.app.post(authPath, ldapCallback)
+*/
   } else if (link) {
     self.app.get(authPath, passport.authorize(name, _.defaults({scope: scope, session: session}, options.authOptions)));
   } else {

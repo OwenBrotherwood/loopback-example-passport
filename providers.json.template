@@ -16,6 +16,7 @@
     "authPath": "/auth/ldap",
     "successRedirect": "/auth/account",
     "failureRedirect": "/ldap",
+    "failureFlash": true,
     "session": true,
     "LdapAttributeForLogin": "uid",
     "LdapAttributeForUsername": "uid",
