@@ -24,8 +24,10 @@ Status:
 - The whole subject of authorization is yet to be checked.
 - Linked accounts...Needed? The LDAP is for internal access such that one can control access without depending on local accounts
 
+WARNING:
+- the package.json includes a forked version of loopback-component-passport: https://github.com/OwenBrotherwood/loopback-component-passport
+
 Notes:
-- passport-configurator.js: the version in the root of this repo is changed from the presently available version
 - providers.json.template: contains an example config for LDAP
 - Anonymous Bind and not allowed: some Microsoft AD Installations do not allow anonymous bind
 - Bind: if the Bind credentials are wrong, no log so watch out
