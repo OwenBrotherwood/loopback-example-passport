@@ -4,13 +4,18 @@ block content
   .row
     .col-md-12
       h1 Login:
+      h2 Local
       ul.list-inline.list-unstyled
         li
           a.btn.btn-primary(href='/local') Login with local account
+      h2 LDAP
+      ul.list-inline.list-unstyled
         li
           a.btn.btn-primary(href="/msad") Login with MS-AD
         li
           a.btn.btn-primary(href="/openldap") Login with OpenLDAP
+      h2 Social
+      ul.list-inline.list-unstyled
         li
           a.btn.btn-primary(href="/auth/facebook") Login with Facebook
         li
