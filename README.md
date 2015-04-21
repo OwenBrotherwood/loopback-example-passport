@@ -14,9 +14,6 @@ Authentication against OpenLDAP and Microsoft AD (via LDAP).
 
 In order to ensure a clean testing ground, the included providers.json.template has two definitions, ms-ad and openldap.
 
-In order to ensure that there is the greatest flexibility in testing, the two definitions for ms-ad and openldap have different provider values
-
-providerType (a normalised provider from the provider.json) is available to create a switch from if nesessary.
 
 Status:
 - ms-ad authentication works for Owen
